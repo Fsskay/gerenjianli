@@ -7,110 +7,200 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>方舜生个人简历</title>
     <style>
-        *{
-            margin:0;
+        * {
+            margin: 0;
             padding: 0;
         }
+
         body {
             background: #efefef;
             margin: 0;
         }
-        a{
+
+        a {
             color: inherit;
             text-decoration: none;
         }
-        .clearfix::after{
+
+        .clearfix::after {
             content: "";
             display: block;
             clear: both;
         }
-        .topNavBar{
+
+        .topNavBar {
             padding: 20px 0 20px 0;
-            position:fixed;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
         }
-        .topNavBar-logo .logo{
+
+        .topNavBar-logo .logo {
             font-size: 24px;
             font-family: 'Arial Black';
             float: left;
             padding: 0 16px;
         }
-        .topNavBar-logo .logo .rs{
+
+        .topNavBar-logo .logo .rs {
             margin-right: 4px;
             color: #e6686a;
         }
+
         .topNavBar-logo .logo .card {
             color: #9a9da2;
         }
-        .topNavBar nav{
+
+        .topNavBar nav {
             padding-top: 7px;
             float: right;
         }
-        .topNavBar-logo>nav>ul{
+
+        .topNavBar-logo > nav > ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        .topNavBar-logo>nav>ul>li{
+
+        .topNavBar-logo > nav > ul > li {
             float: left;
             margin-left: 17px;
             margin-right: 17px;
             list-style: none;
         }
-        .topNavBar-logo>nav>ul>li>a{
+
+        .topNavBar-logo > nav > ul > li > a {
             font-size: 16px;
             text-decoration: none;
             color: #b7b7b7;
             display: block;
         }
-        .banner{
+
+        .banner {
             height: 515px;
             background-image: url("./img/rs-cover.jpg");
             background-position: center center;
             background-size: cover;
         }
-        .banner>.mask{
+
+        .banner > .mask {
             height: 515px;
             background-color: rgba(0, 0, 0, 0.8);
         }
-        .usercard{
+
+        .usercard {
             max-width: 940px;
             margin-left: auto;
             margin-right: auto;
             background-color: #ffffff;
             box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
         }
+
+        .pictureandtext::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .usercard > .pictureandtext {
+            display: block;
+            padding: 50px;
+        }
+
+        .usercard > .pictureandtext > .picture {
+            float: left;
+        }
+
+        .usercard .hello {
+            background: #e6686a;
+            color: white;
+            display: inline-block;
+            padding: 4px 16px;
+            position: relative;
+            line-height: 22px;
+        }
+
+        body > main {
+            margin-top: -340px;
+        }
+
+        .usercard .text {
+            float: left;
+            margin-left: 65px;
+            width: 470px;
+        }
+
+        .hello > .triangle {
+            display: block;
+            border: 7px solid transparent;
+            border-left-color: #e6686a;
+            border-top-color: #e6686a;
+            position: absolute;
+            left: 4px;
+        }
+
+        h1 {
+            font-weight: normal;
+            margin-top: 20px;
+        }
+
+        hr {
+            margin: 10px 10px;
+            border: none;
+            border-top: 1px solid #dedede;
+        }
+
+        .usercard dl dt, .usercard dl dd {
+            float: left;
+            padding: 5px 0;
+        }
+
+        .usercard dl dt {
+            width: 30%;
+            font-weight: bold;
+        }
+
+        .usercard dl dd {
+            width: 70%;
+            color: #9da0a7;
+        }
     </style>
+
 
 </head>
 <body>
-    <div class="topNavBar">
-        <div class="topNavBar-logo">
-            <a href="#" class="logo" alt="logo">
-                <span class="rs">RS</span>
-                <span class="card">card</span>
-            </a>
-            <nav>
-                <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="banner" style="background-image: url(#)"></div>
-        <div class="banner-cover"></div>
+<div class="topNavBar">
+    <div class="topNavBar-logo">
+        <a href="#" class="logo" alt="logo">
+            <span class="rs">RS</span>
+            <span class="card">card</span>
+        </a>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="#">关于</a></li>
+                <li><a href="#">技能</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">其他</a></li>
+            </ul>
+        </nav>
     </div>
-    <div class="banner"><div class="mask"></div></div>
-    <main>
-        <div class="usercard">
-            <div class="picture"><img src="nanjing.jpg" alt="picture"></div>
+    <div class="banner" style="background-image: url(#)"></div>
+    <div class="banner-cover"></div>
+</div>
+<div class="banner">
+    <div class="mask"></div>
+</div>
+<main>
+    <div class="usercard">
+        <div class="pictureandtext">
+            <div class="picture">
+                <img class="img" src="nanjing.jpg" width=299 height=347 alt="picture">
+            </div>
             <div class="text">
-                <span class="hello">hello</span>
+                <span class="hello">Hello<span class="triangle"></span></span>
+
                 <h1>方舜生</h1>
                 <p>前端web开发</p>
                 <hr>
@@ -125,17 +215,18 @@
                     <dd>本科</dd>
                 </dl>
             </div>
-            <div class="media">
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-            </div>
         </div>
-        <div class="download">
-            <a href="#" class="button">下载PDF简历</a>
+        <div class="media">
+            <a href="#"><img src="" alt=""></a>
+            <a href="#"><img src="" alt=""></a>
+            <a href="#"><img src="" alt=""></a>
         </div>
-        <p>方舜生.<br>
-            技能:前端开发</p>
-    </main>
+    </div>
+    <div class="download">
+        <a href="#" class="button">下载PDF简历</a>
+    </div>
+    <p>方舜生.<br>
+        技能:前端开发</p>
+</main>
 </body>
 </html>
