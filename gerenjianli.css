@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #efefef;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+ul,ol {
+    list-style:none;
+}
+.topNavBar {
+    padding: 20px 0 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.topNavBar-logo .logo {
+    font-size: 24px;
+    font-family: 'Arial Black';
+    float: left;
+    padding: 0 16px;
+}
+
+.topNavBar-logo .logo .rs {
+    margin-right: 4px;
+    color: #e6686a;
+}
+
+.topNavBar-logo .logo .card {
+    color: #9a9da2;
+}
+
+.topNavBar nav {
+    padding-top: 7px;
+    float: right;
+}
+
+.topNavBar-logo > nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topNavBar-logo > nav > ul > li {
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px;
+    list-style: none;
+}
+
+.topNavBar-logo > nav > ul > li > a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #b7b7b7;
+    display: block;
+}
+
+.banner {
+    height: 515px;
+    background-image: url("./img/rs-cover.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.banner > .mask {
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.usercard {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.pictureandtext::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.usercard > .pictureandtext {
+    display: block;
+    padding: 50px;
+}
+
+.usercard > .pictureandtext > .picture {
+    float: left;
+}
+
+.usercard .hello {
+    background: #e6686a;
+    color: white;
+    display: inline-block;
+    padding: 4px 16px;
+    position: relative;
+    line-height: 22px;
+}
+
+body > main {
+    margin-top: -340px;
+}
+
+.usercard .text {
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+
+.hello > .triangle {
+    display: block;
+    border: 7px solid transparent;
+    border-left-color: #e6686a;
+    border-top-color: #e6686a;
+    position: absolute;
+    left: 4px;
+}
+
+h1 {
+    font-weight: normal;
+    margin-top: 20px;
+}
+
+hr {
+    margin: 10px 10px;
+    border: none;
+    border-top: 1px solid #dedede;
+}
+
+.usercard dl dt, .usercard dl dd {
+    float: left;
+    padding: 5px 0;
+}
+
+.usercard dl dt {
+    width: 30%;
+    font-weight: bold;
+}
+
+.usercard dl dd {
+    width: 70%;
+    color: #9da0a7;
+}
+
+main > .download {
+    text-align: center;
+}
+
+main > .download > .button {
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid #cdcfd1;
+    background: #efefef;
+    padding: 21px 55px;
+    display: inline-block;
+    margin: 32px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+main > .download > .button:hover {
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+
+main > .selfIntroduction {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: kai;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+section.skills, section.portfolio {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+section.skills > ol {
+    background: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+}
+
+section.skills > ol > li {
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+section.skills > h2,
+section.portfolio > h2 {
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+section.skills h3 {
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+section.skills .progressbar {
+    height: 5px;
+    background: #FAE1E1;
+    border-radius: 2px;
+    margin: 4px 0 40px;
+}
+
+section.skills > ol > li:nth-child(even) {
+    float: right;
+}
+
+section.skills .progressbar .progress {
+    height: 5px;
+    background: darkred;
+    border-radius: 2px;
+    margin: 4px 0 40px;
+    width: 50%;
+}
+
+section.portfolio {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+section.portfolio > nav {
+    text-align: center;
+}
+
+section.portfolio > nav > ol {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.portfolio > nav > ol > li {
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+    list-style: none;
+}
+
+section.portfolio > nav > ol > li:first-child {
+    margin-left: 0;
+
+}
+
+section.portfolio > nav {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+}
+
+section.portfolio > nav .bar {
+    height: 5px;
+    background: white;
+    margin-top: 5px;
+    margin-bottom: 28px;
+    border-radius: 2px;
+}
+
+section.portfolio > nav .bar-inner {
+    height: 100%;
+    background: #E6686A;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+section.portfolio > nav .bar.state-1 .bar-inner {
+    margin-left: 0;
+    width: 50px;
+}
+
+section.portfolio > nav .bar.state-2 .bar-inner {
+    margin-left: 65px;
+    width: 50px;
+}
+
+section.portfolio > nav .bar.state-3 .bar-inner {
+    margin-left: 140px;
+    width: 96px;
+}
+
+section.portfolio .works {
+    position: relative;
+}
+
+section.portfolio .works > .big,
+section.portfolio .works > .small {
+    position: absolute;
+}

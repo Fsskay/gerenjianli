@@ -6,209 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>方舜生个人简历</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: #efefef;
-            margin: 0;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .clearfix::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .topNavBar {
-            padding: 20px 0 20px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        .topNavBar-logo .logo {
-            font-size: 24px;
-            font-family: 'Arial Black';
-            float: left;
-            padding: 0 16px;
-        }
-
-        .topNavBar-logo .logo .rs {
-            margin-right: 4px;
-            color: #e6686a;
-        }
-
-        .topNavBar-logo .logo .card {
-            color: #9a9da2;
-        }
-
-        .topNavBar nav {
-            padding-top: 7px;
-            float: right;
-        }
-
-        .topNavBar-logo > nav > ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .topNavBar-logo > nav > ul > li {
-            float: left;
-            margin-left: 17px;
-            margin-right: 17px;
-            list-style: none;
-        }
-
-        .topNavBar-logo > nav > ul > li > a {
-            font-size: 16px;
-            text-decoration: none;
-            color: #b7b7b7;
-            display: block;
-        }
-
-        .banner {
-            height: 515px;
-            background-image: url("./img/rs-cover.jpg");
-            background-position: center center;
-            background-size: cover;
-        }
-
-        .banner > .mask {
-            height: 515px;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .usercard {
-            max-width: 940px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #ffffff;
-            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
-        }
-
-        .pictureandtext::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .usercard > .pictureandtext {
-            display: block;
-            padding: 50px;
-        }
-
-        .usercard > .pictureandtext > .picture {
-            float: left;
-        }
-
-        .usercard .hello {
-            background: #e6686a;
-            color: white;
-            display: inline-block;
-            padding: 4px 16px;
-            position: relative;
-            line-height: 22px;
-        }
-
-        body > main {
-            margin-top: -340px;
-        }
-
-        .usercard .text {
-            float: left;
-            margin-left: 65px;
-            width: 470px;
-        }
-
-        .hello > .triangle {
-            display: block;
-            border: 7px solid transparent;
-            border-left-color: #e6686a;
-            border-top-color: #e6686a;
-            position: absolute;
-            left: 4px;
-        }
-
-        h1 {
-            font-weight: normal;
-            margin-top: 20px;
-        }
-
-        hr {
-            margin: 10px 10px;
-            border: none;
-            border-top: 1px solid #dedede;
-        }
-
-        .usercard dl dt, .usercard dl dd {
-            float: left;
-            padding: 5px 0;
-        }
-
-        .usercard dl dt {
-            width: 30%;
-            font-weight: bold;
-        }
-
-        .usercard dl dd {
-            width: 70%;
-            color: #9da0a7;
-        }
-
-        main > .download {
-            text-align: center;
-        }
-
-        main > .download > .button {
-            font-size: 14px;
-            line-height: 16px;
-            border: 1px solid #cdcfd1;
-            background: #efefef;
-            padding: 21px 55px;
-            display: inline-block;
-            margin: 32px;
-            border-radius: 2px;
-            font-weight: bold;
-        }
-
-        main > .download > .button:hover {
-            box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
-        }
-        main > .selfIntroduction{
-            max-width: 940px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            font-family: kai;
-            line-height: 1.8;
-            font-size: 18px;
-        }
-        .skills>.progressbar{
-            height: 5px;
-            background: #FAE1E1;
-            border-radius: 2px;
-            margin: 4px 0 40px;
-        }
-        .skills>.progressbar>.progress {
-            height: 5px;
-            background: darkred;
-            border-radius: 2px;
-            margin: 4px 0 40px;
-            width: 50%;
-        }
-    </style>
-
+    <link rel="stylesheet" href="gerenjianli.css">
 
 </head>
 <body>
@@ -271,11 +69,82 @@
         技能:前端开发</p>
 
 </main>
-<div class="skills">
-    <h3>HTML 5 $ CC3</h3>
-    <div class="progressbar">
-        <div class="progress" width="50%"></div>
+<section class="skills">
+    <h2>技能</h2>
+    <ol class="clearfix">
+        <li>
+            <h3>HTML 5 & CC3</h3>
+            <div class="progressbar">
+                <div class="progress" style="width:10%;"></div>
+            </div>
+        </li>
+        <li>
+            <h3>JavaScript</h3>
+            <div class="progressbar">
+                <div class="progress" style="width:20%;"></div>
+            </div>
+        </li>
+        <li>
+            <h3>jQuery</h3>
+            <div class="progressbar">
+                <div class="progress" style="width:30%;"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Vue.js</h3>
+            <div class="progressbar">
+                <div class="progress" style="width:40%;"></div>
+            </div>
+        </li>
+        <li>
+            <h3>React.js</h3>
+            <div class="progressbar">
+                <div class="progress" style="width:50%;"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Node.js</h3>
+            <div class="progressbar">
+                <div class="progress" style="width:60%;"></div>
+            </div>
+        </li>
+    </ol>
+</section>
+<section class="portfolio">
+    <h2>作品集</h2>
+    <nav>
+        <ol class="clearfix">
+            <li id="portfolio1">所有</li>
+            <li id="portfolio2">框架</li>
+            <li id="portfolio3">原生JS&amp;CSS</li>
+        </ol>
+        <div id="portfolioBar" class="bar state-1">
+            <div class="bar-inner"></div>
+        </div>
+    </nav>
+    <script>
+        portfolio1.onclick= function(){
+            portfolioBar.className = 'bar state-1'
+        };
+        portfolio2.onclick= function(){
+            portfolioBar.className = 'bar state-2'
+        };
+        portfolio3.onclick= function(){
+            portfolioBar.className = 'bar state-3'
+        }
+    </script>
+    <div class="works" style="height: 597px;">
+        <div class="big" style="top: 0; left: 0;">
+            <img src="./img/1.jpg" alt="作品1">
+        </div>
+        <div class="small" style="top: 0; left: 645px;">
+            <img src="./img/2.jpg" alt="作品2">
+        </div>
+        <div class="small" style="top: 312px; left: 645px;">
+            <img src="./img/3.jpg" alt="作品3">
+        </div>
     </div>
-</div>
+</section>
+
 </body>
 </html>
