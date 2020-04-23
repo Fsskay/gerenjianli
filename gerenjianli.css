@@ -64,10 +64,18 @@ ul,ol {
 }
 
 .topNavBar-logo > nav > ul > li > a {
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: bold;
     text-decoration: none;
     color: #b7b7b7;
     display: block;
+    padding: 5px 0 5px 0;
+    border-top: 3px solid transparent;;
+    border-bottom: 3px solid transparent;
+}
+
+.topNavBar nav > ul > li > a:hover {
+    border-bottom: 3px solid #e06567;
 }
 
 .banner {
@@ -207,7 +215,6 @@ section.skills > ol > li {
     float: left;
     width: 48%;
     box-sizing: border-box;
-    list-style: none;
 }
 
 section.skills > h2,
@@ -260,10 +267,9 @@ section.portfolio > nav > ol {
 }
 
 section.portfolio > nav > ol > li {
+    cursor: pointer;
     float: left;
     margin-left: 40px;
-    cursor: pointer;
-    list-style: none;
 }
 
 section.portfolio > nav > ol > li:first-child {
@@ -294,17 +300,17 @@ section.portfolio > nav .bar-inner {
 
 section.portfolio > nav .bar.state-1 .bar-inner {
     margin-left: 0;
-    width: 50px;
+    width: 40px;
 }
 
 section.portfolio > nav .bar.state-2 .bar-inner {
-    margin-left: 65px;
-    width: 50px;
+    margin-left: 80px;
+    width: 40px;
 }
 
 section.portfolio > nav .bar.state-3 .bar-inner {
-    margin-left: 140px;
-    width: 96px;
+    margin-left: 160px;
+    width: 115.94px;
 }
 
 section.portfolio .works {

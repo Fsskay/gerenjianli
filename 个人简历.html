@@ -6,12 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>方舜生个人简历</title>
-    <link rel="stylesheet" href="gerenjianli.css">
+    <link rel="stylesheet" href="./gerenjianli.css">
 
 </head>
 <body>
 <div class="topNavBar">
-    <div class="topNavBar-logo">
+    <div class="topNavBar-logo clearfix">
         <a href="#" class="logo" alt="logo">
             <span class="rs">RS</span>
             <span class="card">card</span>
@@ -26,7 +26,6 @@
             </ul>
         </nav>
     </div>
-    <div class="banner" style="background-image: url(#)"></div>
     <div class="banner-cover"></div>
 </div>
 <div class="banner">
@@ -40,7 +39,6 @@
             </div>
             <div class="text">
                 <span class="hello">Hello<span class="triangle"></span></span>
-
                 <h1>方舜生</h1>
                 <p>前端web开发</p>
                 <hr>
@@ -116,7 +114,7 @@
         <ol class="clearfix">
             <li id="portfolio1">所有</li>
             <li id="portfolio2">框架</li>
-            <li id="portfolio3">原生JS&amp;CSS</li>
+            <li id="portfolio3">原生JS与CSS</li>
         </ol>
         <div id="portfolioBar" class="bar state-1">
             <div class="bar-inner"></div>
@@ -124,13 +122,16 @@
     </nav>
     <script>
         portfolio1.onclick= function(){
-            portfolioBar.className = 'bar state-1'
+            portfolioBar.className = 'bar state-1';
+            console.log('1被点击')
         };
         portfolio2.onclick= function(){
-            portfolioBar.className = 'bar state-2'
+            portfolioBar.className = 'bar state-2';
+            console.log('2被点击')
         };
         portfolio3.onclick= function(){
-            portfolioBar.className = 'bar state-3'
+            portfolioBar.className = 'bar state-3';
+            console.log('3被点击')
         }
     </script>
     <div class="works" style="height: 597px;">
