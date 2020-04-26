@@ -1,3 +1,43 @@
+
+.loading {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+}
+
+.loading::before, .loading::after {
+    content:'';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: grey;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    animation: s 1.5s linear infinite;
+}
+
+.loading::after {
+    animation-delay: 0.75s;
+}
+
+@keyframes s {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +58,11 @@ a {
     display: block;
     clear: both;
 }
-ul,ol {
-    list-style:none;
+
+ul, ol {
+    list-style: none;
 }
+
 .topNavBar {
     padding: 20px 0 20px 0;
     position: fixed;
@@ -321,3 +363,4 @@ section.portfolio .works > .big,
 section.portfolio .works > .small {
     position: absolute;
 }
+
