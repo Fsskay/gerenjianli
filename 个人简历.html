@@ -7,11 +7,66 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>方舜生个人简历</title>
     <link rel="stylesheet" href="./gerenjianli.css">
+    <style>
+        .html-welcome{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            height:100%;
+            background: white;
+            z-index: 1;
+        }
+        .html-welcome.active{
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+        }
+        .loading {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .loading::before, .loading::after {
+            content:'';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: grey;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            animation: s 1.5s linear infinite;
+        }
+
+        .loading::after {
+            animation-delay: 0.75s;
+        }
+
+        @keyframes s {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="loading">
 
+<div id="htmlWelcome" class="html-welcome active">
+    <div class="loading"></div>
 </div>
 <div class="topNavBar">
     <div class="topNavBar-logo clearfix">
@@ -149,6 +204,11 @@
         </div>
     </div>
 </section>
-
+<script>
+    function welcomeRemove (){
+        htmlWelcome.classList.remove('active');
+    }
+    setTimeout(welcomeRemove,2000)
+</script>
 </body>
 </html>
