@@ -8,22 +8,24 @@
     <title>方舜生个人简历</title>
     <link rel="stylesheet" href="./gerenjianli.css">
     <style>
-        .html-welcome{
+        .html-welcome {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
-            width:100%;
-            height:100%;
+            width: 100%;
+            height: 100%;
             background: white;
             z-index: 1;
         }
-        .html-welcome.active{
+
+        .html-welcome.active {
             display: flex;
             align-items: center;
             justify-content: center;
 
         }
+
         .loading {
             width: 200px;
             height: 200px;
@@ -31,7 +33,7 @@
         }
 
         .loading::before, .loading::after {
-            content:'';
+            content: '';
             position: absolute;
             width: 10px;
             height: 10px;
@@ -68,7 +70,7 @@
 <div id="htmlWelcome" class="html-welcome active">
     <div class="loading"></div>
 </div>
-<div class="topNavBar">
+<div id="topNavBar" class="topNavBar">
     <div class="topNavBar-logo clearfix">
         <a href="#" class="logo" alt="logo">
             <span class="rs">RS</span>
@@ -76,11 +78,36 @@
         </a>
         <nav>
             <ul class="clearfix">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">联系方式</a></li>
-                <li><a href="#">其他</a></li>
+                <li class="nonMenuTrigger"><a href="#">关于</a></li>
+                <li class="nonMenuTrigger"><a href="#">技能</a></li>
+                <li class="menuTrigger"><a href="#">作品</a>
+                    <ul class="submenu">
+                        <li>
+                            作品1
+                        </li>
+                        <li>
+                            作品2
+                        </li>
+                        <li>
+                            作品3
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuTrigger"><a href="#">博客</a>
+                    <ul class="submenu">
+                        <li>
+                            博客1
+                        </li>
+                        <li>
+                            博客2
+                        </li>
+                        <li>
+                            博客3
+                        </li>
+                    </ul>
+                </li>
+                <li class="nonMenuTrigger"><a href="#">联系方式</a></li>
+                <li class="nonMenuTrigger"><a href="#">其他</a></li>
             </ul>
         </nav>
     </div>
@@ -178,16 +205,16 @@
             <div class="bar-inner"></div>
         </div>
     </nav>
-    <script>
-        portfolio1.onclick= function(){
+    <script type="text/javascript">
+        portfolio1.onclick = function () {
             portfolioBar.className = 'bar state-1';
             console.log('1被点击')
         };
-        portfolio2.onclick= function(){
+        portfolio2.onclick = function () {
             portfolioBar.className = 'bar state-2';
             console.log('2被点击')
         };
-        portfolio3.onclick= function(){
+        portfolio3.onclick = function () {
             portfolioBar.className = 'bar state-3';
             console.log('3被点击')
         }
@@ -204,11 +231,31 @@
         </div>
     </div>
 </section>
-<script>
-    function welcomeRemove (){
+<script type="text/javascript">
+    function welcomeRemove() {
         htmlWelcome.classList.remove('active');
     }
-    setTimeout(welcomeRemove,2000)
+
+    setTimeout(welcomeRemove, 2000);
+
+    window.onscroll = function (mouseWheelWatcher) {
+        if (window.scrollY > 0) {
+            topNavBar.classList.add('sticky')
+        } else {
+            topNavBar.classList.remove('sticky')
+        }
+    };
+
+    let liTags = document.getElementsByClassName('menuTrigger');
+    console.log(liTags);
+    for(let i=0; i<liTags.length; i++){
+        liTags[i].onmouseenter = function (x) {
+            x.currentTarget.classList.add('active');
+        };
+        liTags[i].onmouseleave = function (y) {
+            y.currentTarget.classList.remove('active');
+        }
+    }
 </script>
 </body>
 </html>

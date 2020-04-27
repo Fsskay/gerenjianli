@@ -30,6 +30,18 @@ ul, ol {
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.5s;
+    color: #b7b7b7;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+.topNavBar.sticky {
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #3d4451;
 }
 
 .topNavBar-logo .logo {
@@ -49,8 +61,42 @@ ul, ol {
 }
 
 .topNavBar nav {
-    padding-top: 7px;
+    padding-top: 5px;
     float: right;
+}
+
+.topNavBar .submenu {
+    display: none;
+    position: absolute;
+    left:-11px;
+    top: 100%;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.topNavBar li.active > .submenu {
+    display: inline-block;
+    animation: submenuSlide 0.5s;
+}
+@keyframes submenuSlide {
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+.topNavBar .submenu > li {
+    white-space: nowrap;
+    background: white;
+    padding: 10px;
+    font-size: 12px;
 }
 
 .topNavBar-logo > nav > ul {
@@ -64,21 +110,53 @@ ul, ol {
     margin-left: 17px;
     margin-right: 17px;
     list-style: none;
+    position: relative;
 }
 
 .topNavBar-logo > nav > ul > li > a {
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
-    color: #b7b7b7;
+    text-align: center;
+    color: inherit;
     display: block;
+    position: relative;
     padding: 5px 0 5px 0;
-    border-top: 3px solid transparent;;
+    border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
 }
 
-.topNavBar nav > ul > li > a:hover {
-    border-bottom: 3px solid #e06567;
+.topNavBar nav > ul > li.active > .submenu::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: red;
+    height: 3px;
+    animation: menuSlide 0.25s;
+}
+
+.topNavBar nav > ul > li.nonMenuTrigger > a:hover::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: red;
+    height: 3px;
+    animation: menuSlide 0.25s;
+}
+
+@keyframes menuSlide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 .banner {
@@ -182,7 +260,7 @@ main > .download > .button {
     padding: 21px 55px;
     display: inline-block;
     margin: 32px;
-    border-radius: 2px;
+    border-radius: 3px;
     font-weight: bold;
 }
 
@@ -195,7 +273,8 @@ main > .selfIntroduction {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: kai;
+    font-family: 华文楷体;
+    font-weight: bolder;;
     line-height: 1.8;
     font-size: 18px;
 }
