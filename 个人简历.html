@@ -76,11 +76,11 @@
             <span class="rs">RS</span>
             <span class="card">card</span>
         </a>
-        <nav>
+        <nav class="menu">
             <ul class="clearfix">
-                <li class="nonMenuTrigger"><a href="#">关于</a></li>
-                <li class="nonMenuTrigger"><a href="#">技能</a></li>
-                <li class="menuTrigger"><a href="#">作品</a>
+                <li class="nonMenuTrigger"><a href="#siteAbout">关于</a></li>
+                <li class="nonMenuTrigger"><a href="#siteSkills">技能</a></li>
+                <li class="menuTrigger"><a href="#sitePortfolio">作品</a>
                     <ul class="submenu">
                         <li>
                             作品1
@@ -117,7 +117,7 @@
     <div class="mask"></div>
 </div>
 <main>
-    <div class="usercard">
+    <div class="usercard" id="siteAbout">
         <div class="pictureandtext">
             <div class="picture">
                 <img class="img" src="./img/avatar.jpg" width=299 height=347 alt="picture">
@@ -152,7 +152,7 @@
         技能:前端开发</p>
 
 </main>
-<section class="skills">
+<section class="skills" id="siteSkills">
     <h2>技能</h2>
     <ol class="clearfix">
         <li>
@@ -193,7 +193,7 @@
         </li>
     </ol>
 </section>
-<section class="portfolio">
+<section class="portfolio" id="sitePortfolio">
     <h2>作品集</h2>
     <nav>
         <ol class="clearfix">
@@ -254,6 +254,17 @@
         };
         liTags[i].onmouseleave = function (y) {
             y.currentTarget.classList.remove('active');
+        }
+    }
+    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+    for(let i=0; i<aTags.length; i++){
+        aTags[i].onclick = function(x){
+            x.preventDefault()
+            let a = x.currentTarget
+            let href = a.getAttribute('href') //'#siteAbout'
+            let element = document.querySelector(href)
+            let top = element.offsetTop
+            window.scrollTo(0, top - 80)
         }
     }
 </script>
