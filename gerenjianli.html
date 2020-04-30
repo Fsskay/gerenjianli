@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -117,7 +116,7 @@
     <div class="mask"></div>
 </div>
 <main>
-    <div  data-x class="usercard" id="siteAbout">
+    <div data-x class="usercard" id="siteAbout">
         <div class="pictureandtext">
             <div class="picture">
                 <img class="img" src="./img/avatar.jpg" width=299 height=347 alt="picture">
@@ -230,6 +229,13 @@
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
 <script>
+
+    function welcomeRemove() {
+        htmlWelcome.classList.remove('active');
+    }
+
+    setTimeout(welcomeRemove, 500);
+
     let aTags = document.querySelectorAll('nav.menu > ul > li > a');
 
     function animate(time) {
@@ -265,49 +271,52 @@
                 .start(); // 开始缓动
         }
     }
-
-
-    let specialTags = document.querySelectorAll('[data-x]');        //声明specialTags选择全部带有data-x的
-    for(let i =0;i<specialTags.length; i++){
-        specialTags[i].classList.add('offset')      //data-x的元素class上添加offset
-    }
-
-    findClosest();
-    function findClosest(){
-        let specialTags = document.querySelectorAll('[data-x]');
-        let minIndex = 0;
-        for(let i =1;i<specialTags.length; i++){ //如果dada-x标签的y坐标的绝对值减去用户页面所在y坐标的绝对值 小于 离窗口顶部最近的元素减去用户页面所在y坐标的绝对值
-            if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-                minIndex = i;       //那么这个i就是离窗口顶部最近的元素
-                return minIndex
-            }
-        }
-        // minIndex 就是离窗口顶部最近的元素
-        specialTags[minIndex].classList.remove('offset');       //为就是离窗口顶部最近的元素minIndex移除classList中的offset
-        let id = specialTags[minIndex].id;      //赋值id为minIndex的id
-        let a = document.querySelector('a[href="#'+ id + '"]');     //赋值a为选择minIndex的id的a元素
-        let li = a.parentNode;      //赋值li为a的父节点
-        let brothersAndMe = li.parentNode.children;
-        for(let i=0; i<brothersAndMe.length; i++){
-            brothersAndMe[i].classList.remove('highlight')
-        }
-        li.classList.add('highlight')
-    }
-
-
-    function welcomeRemove() {
-        htmlWelcome.classList.remove('active');
-    }
-
-    setTimeout(welcomeRemove, 1500);
-
+    setTimeout(function () {
+        findClosest();
+    },500);
     window.onscroll = function (mouseWheelWatcher) {
         if (window.scrollY > 0) {
             topNavBar.classList.add('sticky')
         } else {
             topNavBar.classList.remove('sticky')
         }
+        findClosest()
     };
+
+    let specialTags = document.querySelectorAll('[data-x]');
+    for (let i = 0; i < specialTags.length; i++) {
+        specialTags[i].classList.add('offset')
+    }
+
+    function findClosest(){
+        let specialTags = document.querySelectorAll('[data-x]');
+        let minIndex = 0;
+        for(let i =1;i<specialTags.length; i++){ //如果dada-x标签的y坐标的绝对值减去用户页面所在y坐标的绝对值 小于 离窗口顶部最近的元素减去用户页面所在y坐标的绝对值
+            if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+                minIndex = i;       //那么这个i就是离窗口顶部最近的元素
+            }
+        }
+        // minIndex 就是离窗口顶部最近的元素
+        specialTags[minIndex].classList.remove('offset');       //为就是离窗口顶部最近的元素minIndex移除classList中的offset
+        let id = specialTags[minIndex].id;      //赋值id为minIndex的id
+        let a = document.querySelector('a[href="#'+ id + '"]');     //赋值a为选择minIndex的id的a元素
+        let li = a.parentNode;      //赋值关键的li为a的父节点
+        let brothersAndMe = li.parentNode.children;     //找到所有的li,
+        for(let i=0; i<brothersAndMe.length; i++){      //遍历所有li
+            brothersAndMe[i].classList.remove('highlight')      //删除highlight的li
+        }
+        li.classList.add('highlight')       //关键的li添加highlight
+    }
+
+
+    function welcomeRemove() {
+        htmlWelcome.classList.remove('active');
+        setTimeout(welcomeRemove, 1500);
+    }
+
+
+
+
 
     let liTags = document.getElementsByClassName('menuTrigger');
     for (let i = 0; i < liTags.length; i++) {
@@ -318,6 +327,8 @@
             y.currentTarget.classList.remove('active');
         }
     }
+
+
 
 
 </script>

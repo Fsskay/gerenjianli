@@ -24,6 +24,7 @@ ul, ol {
     list-style: none;
 }
 
+
 .topNavBar {
     padding: 20px 0 20px 0;
     position: fixed;
@@ -42,6 +43,7 @@ ul, ol {
     padding: 10px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     color: #3d4451;
+    z-index: 1;
 }
 
 .topNavBar-logo .logo {
@@ -68,7 +70,7 @@ ul, ol {
 .topNavBar .submenu {
     display: none;
     position: absolute;
-    left:-11px;
+    left: -11px;
     top: 100%;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
 }
@@ -77,15 +79,16 @@ ul, ol {
     display: inline-block;
     animation: submenuSlide 0.5s;
 }
+
 @keyframes submenuSlide {
-    0%{
+    0% {
         transform: translateX(-50%);
         opacity: 0;
     }
-    50%{
+    50% {
         opacity: 0.5;
     }
-    100%{
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
@@ -133,7 +136,7 @@ ul, ol {
     top: 0;
     left: 0;
     width: 100%;
-    background: red;
+    background: #E6686A;
     height: 3px;
     animation: menuSlide 0.25s;
 }
@@ -145,7 +148,19 @@ ul, ol {
     top: 100%;
     left: 0;
     width: 100%;
-    background: red;
+    background: #E6686A;
+    height: 3px;
+    animation: menuSlide 0.25s;
+}
+
+.topNavBar nav > ul > li.highlight > a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #E6686A;
     height: 3px;
     animation: menuSlide 0.25s;
 }
@@ -314,23 +329,32 @@ section.skills h3 {
     padding-right: 40px;
 }
 
-section.skills .progressbar {
-    height: 5px;
-    background: #FAE1E1;
-    border-radius: 2px;
-    margin: 4px 0 40px;
-}
+
+
 
 section.skills > ol > li:nth-child(even) {
     float: right;
 }
 
-section.skills .progressbar .progress {
+section.skills .progressbar {
     height: 5px;
-    background: darkred;
+    background: #FAE1E1;
     border-radius: 2px;
     margin: 4px 0 40px;
+    overflow: hidden;
+}
+
+section.skills .progressbar .progress {
+    height: 5px;
+    background: #E6686A;
+    border-radius: 2px;
     width: 50%;
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+section.skills.offset .progress {
+    transform: translateX(-100%);
 }
 
 section.portfolio {
@@ -404,3 +428,24 @@ section.portfolio .works > .small {
     position: absolute;
 }
 
+[data-x].active {
+    outline: 10px solid red;
+}
+
+[data-x].offset {
+    transform: translateY(80px);
+}
+
+[data-x] {
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
