@@ -14,6 +14,68 @@ a {
     text-decoration: none;
 }
 
+.html-welcome {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1;
+}
+
+.html-welcome.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.loading {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.loading::before, .loading::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: grey;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    animation: s 1.5s linear infinite;
+}
+
+.loading::after {
+    animation-delay: 0.75s;
+}
+
+@keyframes s {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+.swiper-container {
+    width: 600px;
+    height: 300px;
+    outline: black 1px solid;
+}
+
 .clearfix::after {
     content: "";
     display: block;
@@ -80,6 +142,11 @@ ul, ol {
     animation: submenuSlide 0.5s;
 }
 
+.topNavBar li.popoverActive > .submenu {
+    display: inline-block;
+    animation: submenuSlide 0.5s;
+}
+
 @keyframes submenuSlide {
     0% {
         transform: translateX(-50%);
@@ -140,6 +207,19 @@ ul, ol {
     height: 3px;
     animation: menuSlide 0.25s;
 }
+
+.topNavBar nav > ul > li.popoverActive > .submenu::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #E6686A;
+    height: 3px;
+    animation: menuSlide 0.25s;
+}
+
 
 .topNavBar nav > ul > li.nonMenuTrigger > a:hover::after {
     content: '';
@@ -321,6 +401,7 @@ section.portfolio > h2 {
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
+    margin-bottom: 30px;
 }
 
 section.skills h3 {
@@ -419,14 +500,13 @@ section.portfolio > nav .bar.state-3 .bar-inner {
     width: 115.94px;
 }
 
+
 section.portfolio .works {
     position: relative;
+    width: 900px;
+    height: 500px;
 }
 
-section.portfolio .works > .big,
-section.portfolio .works > .small {
-    position: absolute;
-}
 
 [data-x].active {
     outline: 10px solid red;
@@ -448,4 +528,29 @@ section.portfolio .works > .small {
     100% {
         transform: translateY(0);
     }
+}
+
+.swiper-container{
+    width: 940px;
+    height: 720px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+.swiper-button-prev{
+    background-color: rgba(0,0,0,0.2);
+    left: -90px;
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+}
+.swiper-button-next{
+    background-color: rgba(0,0,0,0.2);
+    right: -90px;
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
 }
