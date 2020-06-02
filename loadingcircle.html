@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .loading {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .loading::before,.loading::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: grey;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            animation: s 1.5s linear infinite;
+        }
+        .loading::after{
+            animation-delay: 0.75s;
+        }
+
+        @keyframes s {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="loading">
+
+</div>
+</body>
+</html>

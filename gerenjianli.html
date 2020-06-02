@@ -8,6 +8,34 @@
     <link rel="stylesheet" href="./gerenjianli.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+    <style>
+        .swiper-container {
+            width: 940px;
+            height: 720px;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+            border-radius: 2px;
+        }
+
+        .swiper-button-prev {
+            background-color: rgba(0, 0, 0, 0.2);
+            left: -90px;
+            opacity: 0.5;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+        }
+
+        .swiper-button-next {
+            background-color: rgba(0, 0, 0, 0.2);
+            right: -90px;
+            opacity: 0.5;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+        }</style>
 </head>
 <body>
 
@@ -57,7 +85,6 @@
     </div>
     <div class="banner-cover"></div>
 </div>
-
 <div class="banner">
     <div class="mask"></div>
 </div>
@@ -138,130 +165,30 @@
         </li>
     </ol>
 </section>
-
 <section data-x class="portfolio" id="sitePortfolio">
     <h2>作品集</h2>
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
+
             <img src="img/internet/work1.jpg" class="swiper-slide" height="720" width="960"/>
             <img src="img/internet/work2.jpg" class="swiper-slide" height="720" width="960"/>
             <img src="img/internet/work3.jpg" class="swiper-slide" height="720" width="960"/>
+
         </div>
         <!-- 如果需要分页器 -->
         <div class="swiper-pagination"></div>
+        <!-- 如果需要导航按钮 -->
     </div>
-    <!-- 如果需要导航按钮 -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-
 </section>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
-
 <!--原生DOM脚本-->
-<script>
-
-    function welcomeRemove() {
-        htmlWelcome.classList.remove('active');
-    }
-
-    setTimeout(welcomeRemove, 500);
-
-    let aTags = document.querySelectorAll('nav.menu > ul > li > a');
-
-    function animate(time) {
-        requestAnimationFrame(animate);
-        TWEEN.update(time);
-    }
-
-    requestAnimationFrame(animate);
-
-    for (let i = 0; i < aTags.length; i++) {
-        aTags[i].onclick = function (x) {
-            x.preventDefault();
-            let a = x.currentTarget;
-            let href = a.getAttribute('href'); //'#siteAbout'
-            let element = document.querySelector(href);
-            let top = element.offsetTop;
-
-            let currentTop = window.scrollY;
-            let targetTop = top - 80;
-            let s = targetTop - currentTop; // 路程
-            var coords = {y: currentTop}; // 起始位置
-            var t = Math.abs((s / 100) * 300); // 时间
-            if (t > 500) {
-                t = 500
-            }
-            var tween = new TWEEN.Tween(coords) // 起始位置
-                .to({y: targetTop}, t) // 结束位置 和 时间
-                .easing(TWEEN.Easing.Cubic.InOut) // 缓动类型
-                .onUpdate(function () {
-                    // coords.y 已经变了
-                    window.scrollTo(0, coords.y) // 如何更新界面
-                })
-                .start(); // 开始缓动
-        }
-    }
-    setTimeout(function () {
-        findClosest();
-    }, 500);
-    window.onscroll = function (mouseWheelWatcher) {
-        if (window.scrollY > 0) {
-            topNavBar.classList.add('sticky')
-        } else {
-            topNavBar.classList.remove('sticky')
-        }
-        findClosest()
-    };
-
-    let specialTags = document.querySelectorAll('[data-x]');
-    for (let i = 0; i < specialTags.length; i++) {
-        specialTags[i].classList.add('offset')
-    }
-
-    function findClosest() {
-        let specialTags = document.querySelectorAll('[data-x]');
-        let minIndex = 0;
-        for (let i = 1; i < specialTags.length; i++) { //如果dada-x标签的y坐标的绝对值减去用户页面所在y坐标的绝对值 小于 离窗口顶部最近的元素减去用户页面所在y坐标的绝对值
-            if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-                minIndex = i;       //那么这个i就是离窗口顶部最近的元素
-            }
-        }
-        // minIndex 就是离窗口顶部最近的元素
-        specialTags[minIndex].classList.remove('offset');       //为就是离窗口顶部最近的元素minIndex移除classList中的offset
-        let id = specialTags[minIndex].id;      //赋值id为minIndex的id
-        let a = document.querySelector('a[href="#' + id + '"]');     //赋值a为选择minIndex的id的a元素
-        let li = a.parentNode;      //赋值关键的li为a的父节点
-        let brothersAndMe = li.parentNode.children;     //找到所有的li,
-        for (let i = 0; i < brothersAndMe.length; i++) {      //遍历所有li
-            brothersAndMe[i].classList.remove('highlight')      //删除highlight的li
-        }
-        li.classList.add('highlight')       //关键的li添加highlight
-    }
-
-
-    function welcomeRemove() {
-        htmlWelcome.classList.remove('active');
-        setTimeout(welcomeRemove, 1500);
-    }
-
-
-    let liTags = document.getElementsByClassName('menuTrigger');
-    for (let i = 0; i < liTags.length; i++) {
-        liTags[i].onmouseenter = function (x) {
-            x.currentTarget.classList.add('active');
-        };
-        liTags[i].onmouseleave = function (y) {
-            y.currentTarget.classList.remove('active');
-        };
-    }
-
-
-
-
-</script>
+<script src="welcomeRemove.js"></script>
+<script src="smoothly-navigation.js"></script>
+<script src="menuTrigger.js"></script>
+<script src="findClosest.js"></script>
 
 
 <!--Swiper 脚本-->
