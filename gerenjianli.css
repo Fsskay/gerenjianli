@@ -15,7 +15,6 @@ a {
 }
 
 
-
 .html-welcome {
     display: none;
     position: fixed;
@@ -82,6 +81,40 @@ a {
     content: "";
     display: block;
     clear: both;
+}
+
+form {
+    text-align: center;
+    padding:16px;
+
+}
+
+#inputName{
+    outline-style: none;
+    border: 1px solid #ccc;
+    padding: 13px;
+    border-radius: 3px;
+    width: 141px;
+    height: 20px;
+    font-size: 16px;
+    font-family: "Microsoft soft";
+}
+#inputContent{
+    outline-style: none;
+    border: 1px solid #ccc;
+    padding: 13px;
+    border-radius: 3px;
+    width: 485px;
+    height: 20px;
+    font-size: 16px;
+    font-family: "Microsoft soft";
+}
+
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 }
 
 ul, ol {
@@ -376,6 +409,26 @@ main > .selfIntroduction {
     font-size: 18px;
 }
 
+section.reviews > h2 {
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+section.reviews > ol {
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid #DDD;
+}
+
+section.reviews > ol > li {
+    font-size: 16px;
+    padding: 16px;
+    border-bottom: 1px solid #DDD;
+}
+
 section.skills, section.portfolio {
     max-width: 940px;
     margin-left: auto;
@@ -411,8 +464,6 @@ section.skills h3 {
     line-height: 1.1;
     padding-right: 40px;
 }
-
-
 
 
 section.skills > ol > li:nth-child(even) {
