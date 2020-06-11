@@ -409,7 +409,7 @@ main > .selfIntroduction {
     font-size: 18px;
 }
 
-section.reviews > h2 {
+section.message > h2 {
     text-align: center;
     color: #3d4451;
     font-size: 34px;
@@ -417,13 +417,13 @@ section.reviews > h2 {
     font-weight: 600;
 }
 
-section.reviews > ol {
+section.message > ol {
     max-width: 700px;
     margin: 0 auto;
     border-top: 1px solid #DDD;
 }
 
-section.reviews > ol > li {
+section.message > ol > li {
     font-size: 16px;
     padding: 16px;
     border-bottom: 1px solid #DDD;
