@@ -77,9 +77,9 @@ a {
 }
 
 .swiper-container {
-    width: 600px;
-    height: 300px;
-    outline: black 1px solid;
+    width: 940px;
+    height: 720px;
+
 }
 
 .clearfix::after {
@@ -90,7 +90,7 @@ a {
 
 form {
     text-align: center;
-    padding:16px;
+    padding:20px;
 
 }
 
@@ -101,8 +101,9 @@ form {
     border-radius: 3px;
     width: 141px;
     height: 20px;
-    font-size: 16px;
+    font-size: 20px;
     font-family: "Microsoft soft";
+    font-weight: 600;
 }
 #inputContent{
     outline-style: none;
@@ -111,8 +112,9 @@ form {
     border-radius: 3px;
     width: 485px;
     height: 20px;
-    font-size: 16px;
+    font-size: 20px;
     font-family: "Microsoft soft";
+    font-weight: 600;
 }
 
 input:focus{
@@ -179,7 +181,7 @@ ul, ol {
 
 .topNavBar #weChat {
     left: -150px;
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -419,6 +421,13 @@ main > .selfIntroduction {
     line-height: 1.8;
     font-size: 18px;
 }
+section.message {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    margin-bottom: 50px;
+}
 
 section.message > h2 {
     text-align: center;
@@ -426,18 +435,28 @@ section.message > h2 {
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
+    padding: 30px;
+    background: #efefef;
 }
 
-section.message > ol {
+section.message .message-container {
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    padding:40px;
+}
+
+
+section.message .message-container> ol {
     max-width: 700px;
     margin: 0 auto;
     border-top: 1px solid #DDD;
 }
 
-section.message > ol > li {
-    font-size: 16px;
+section.message .message-container > ol > li {
+    font-size: 20px;
     padding: 16px;
     border-bottom: 1px solid #DDD;
+
+    font-weight: 600;
 }
 
 section.skills, section.portfolio {
@@ -504,7 +523,7 @@ section.skills.offset .progress {
 
 section.portfolio {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 section.portfolio > nav {

@@ -89,7 +89,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nonMenuTrigger"><a href="#">其他</a></li>
+                <li class="nonMenuTrigger"><a href="#messageAbout">留言</a></li>
             </ul>
         </nav>
     </div>
@@ -180,11 +180,14 @@
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
-
-            <img src="img/internet/work1.jpg" class="swiper-slide" height="720" width="960"/>
-            <img src="img/internet/work2.jpg" class="swiper-slide" height="720" width="960"/>
-            <img src="img/internet/work3.jpg" class="swiper-slide" height="720" width="960"/>
-
+            <a href="https://github.com/Fsskay/ReactMoneyBook-V1.0" class="swiper-slide" target="view_window"><img
+                    src="img/internet/work1.png" height="720" width="960"/></a>
+            <a href="https://github.com/Fsskay/Canvas" class="swiper-slide" target="view_window"><img
+                    src="img/internet/work2.png" height="720" width="960"/></a>
+            <a href="https://github.com/Fsskay/Keyboard" class="swiper-slide" target="view_window"><img
+                    src="img/internet/work3.png" height="720" width="960"/></a>
+            <a href="https://github.com/Fsskay/ReactAntdPratice" class="swiper-slide" target="view_window"><img
+                    src="img/internet/work4.png" height="720" width="960"/></a>
         </div>
         <!-- 如果需要分页器 -->
         <div class="swiper-pagination"></div>
@@ -194,17 +197,19 @@
     <div class="swiper-button-next"></div>
 </section>
 
-    <section class="message">
-        <h2 onselectstart="return false;" style="-moz-user-select:none;">留言</h2>
+<section data-x class="message" id="messageAbout" >
+    <h2>留言</h2>
+    <div class="message-container">
         <form id="postMessageForm" class="clearfix">
-            <input type="text" name="name" id="inputName" placeholder="请输入您的昵称">
-            <input type="text" name="content" id="inputContent" placeholder="请输入您的留言">
-            <input type="submit" value="提交">
+            <input type="text" name="name" id="inputName" placeholder="输入昵称">
+            <input type="text" name="content" id="inputContent" placeholder="输入您的留言">
+            <input type="submit" value="提交" class="submitButton">
         </form>
         <ol id="messageList">
         </ol>
+    </div>
 
-    </section>
+</section>
 
 
 <!--原生DOM脚本-->
@@ -214,12 +219,10 @@
 <script src="menuTrigger.js"></script>
 <script src="findClosest.js"></script>
 
-
 <!--Swiper 脚本-->
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="Swiper1.js"></script>
-<script src="Swiper2.js"></script>
+<script src="Swiper.js"></script>
 
 <!--leancloud 脚本-->
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script>
