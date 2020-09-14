@@ -172,6 +172,12 @@ ul, ol {
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
+.topNavBar #weChat {
+    left: -150px;
+    z-index: 1;
+}
+
+
 .topNavBar li.active > .submenu {
     display: inline-block;
     animation: submenuSlide 0.5s;
