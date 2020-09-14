@@ -38,7 +38,6 @@
         }</style>
 
 
-
 </head>
 <body>
 
@@ -194,19 +193,18 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 </section>
-<div></div>
-<div></div>
-<section class="message">
-    <h2>留言</h2>
-    <form id="postMessageForm" class="clearfix">
-        <input type="text" name="name" id="inputName" placeholder="请输入您的昵称">
-        <input type="text" name="content" id="inputContent" placeholder="请输入您的留言">
-        <input type="submit" value="提交">
-    </form>
-    <ol id="messageList">
-    </ol>
 
-</section>
+    <section class="message">
+        <h2 onselectstart="return false;" style="-moz-user-select:none;">留言</h2>
+        <form id="postMessageForm" class="clearfix">
+            <input type="text" name="name" id="inputName" placeholder="请输入您的昵称">
+            <input type="text" name="content" id="inputContent" placeholder="请输入您的留言">
+            <input type="submit" value="提交">
+        </form>
+        <ol id="messageList">
+        </ol>
+
+    </section>
 
 
 <!--原生DOM脚本-->
@@ -218,8 +216,8 @@
 
 
 <!--Swiper 脚本-->
-<script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="Swiper1.js"></script>
 <script src="Swiper2.js"></script>
 
