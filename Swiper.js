@@ -9,8 +9,6 @@
         pagination: {
             el: '.swiper-pagination',
         },
-
-        // 如果需要前进后退按钮
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -20,7 +18,7 @@
         scrollbar: {
             el: '.swiper-scrollbar',
         },
-
+        autoHeight: true,
 
     })
     //鼠标覆盖停止自动切换

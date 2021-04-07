@@ -19,7 +19,7 @@
         scrollToElement: function (element) {
             let top = element.offsetTop;
             let currentTop = window.scrollY;
-            let targetTop = top - 80;
+            let targetTop = top - 100;
             let s = targetTop - currentTop; // 路程
             var coords = {y: currentTop}; // 起始位置
             var t = Math.abs((s / 100) * 300); // 时间
